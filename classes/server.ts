@@ -25,12 +25,20 @@ export default class Server {
     start(callback: any): void {
         this.httpServer.listen(this.port, callback);
     }
-    listenSockets() {
-        console.log('Escuchando conecciones')
+    private listenSockets() {
+
         this.io.on("connection", client => {
-            console.log('nuevo cliente conectado');
-            socket.mensaje( client, this.io );
-            socket.desconectar( client )
+            // Conectar cliente
+            socket.conectarCliente(client)
+
+            // Configurar usuario
+            socket.configurarUsuario(client, this.io);
+            console.log(client.id)
+            // Mensajes
+            socket.mensaje(client, this.io);
+            //Desconectar
+            socket.desconectar(client)
+
         })
 
     }
