@@ -37,7 +37,7 @@ router.post('/usuario', (req: Request, res: Response) => {
 router.get('/usuario/:id',(req: Request, res: Response) => {
 const id = req.params.id;
 const nombre = ''
-const setver = Server.instance;
+const server = Server.instance;
 const payload = {
     id,
     nombre
@@ -81,10 +81,14 @@ router.get('/usuarios',(req: Request, res: Response) => {
 }
 )
 
+// obtener usuarios y sus nombres gg
+
 router.get('/usuarios/detalle',(req:Request, res:Response) => {
     res.json({
         ok: true,
         clientes: usuariosConectados.getLista()
     })
 })
-export default router;
+
+
+export default router;  

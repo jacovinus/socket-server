@@ -1,4 +1,5 @@
 import { Usuario } from "./user";
+import { usuariosConectados } from "../sockets/sockets";
 
 export class UsersList {
     private lista: Usuario[] = [];
@@ -23,7 +24,7 @@ export class UsersList {
 
     // obtener lista de usuarios conectados
     public getLista() {
-        return this.lista;
+        return this.lista.filter(usuario => usuario.nombre !== 'sin-nombre')
     }
 
     public getUsuario(id: string) {
