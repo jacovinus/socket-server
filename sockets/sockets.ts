@@ -27,10 +27,10 @@ export const mensaje = (client: Socket, io: SocketIO.Server) => {
 }
 
 export const configurarUsuario = (client: Socket, io: SocketIO.Server) => {
-    client.on('configurar-usuario', (payload: { nombre: string }, cb: Function) => {
+    client.on('configurar-usuario', (payload: { nombre: string }, callback:Function )=> {
           usuariosConectados.updateName(client.id, payload.nombre)
           io.emit('usuarios-activos', usuariosConectados.getLista())
-        cb({
+        callback({
             ok: true,
             mensaje: `Usuario ${payload.nombre} , configurado`
         })
