@@ -7,7 +7,6 @@ export class UsersList {
     }
     public addUser(usuario: Usuario) {
         this.lista.push(usuario);
-        console.log(this.lista)
         return usuario;
 
     }
@@ -18,8 +17,7 @@ export class UsersList {
                 break;
             }
         }
-        console.log('===== actualizando usuario ===== ')
-        console.log(this.lista);
+ 
     }
 
     // obtener lista de usuarios conectados
@@ -38,7 +36,6 @@ export class UsersList {
     public borrarUsuario(id: string) {
         const tempUsuario = this.getUsuario(id);
         this.lista = this.lista.filter(usuario => usuario.id !== id)
-        console.log(this.lista, 'usuario borrado')
         return tempUsuario;
     }
 }

@@ -20,7 +20,6 @@ export const desconectar = ( client: Socket, io: SocketIO.Server ) => {
 // Escuchar mensajes
 export const mensaje = (client: Socket, io: SocketIO.Server) => {
     client.on('mensaje', (payload: { de: string, cuerpo: string }) => {
-        console.log('mensaje recibido', payload)
 
         io.emit('mensaje-nuevo', payload)
     })

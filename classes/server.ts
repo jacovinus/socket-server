@@ -34,7 +34,6 @@ export default class Server {
             socket.configurarUsuario(client, this.io);
             //obtener usuarios activos
             socket.obtenerUsuarios(client,this.io);
-            console.log(client.id)
             // Mensajes
             socket.mensaje(client, this.io);
             //Desconectar
