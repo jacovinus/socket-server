@@ -1,8 +1,8 @@
-# Socket-Server
+# jcvns Socket-Server
 
 Basic setup for https://github.com/jacovinus/jcvns-sockets-app
 
-Instructions:
+*Instructions:*
 
 Install node
 ```
